@@ -16,9 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
-  onTap(int index) {
-    selectedIndex = index;
-  }
 
   late PageController pageController = PageController();
 
@@ -26,6 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void dispose() {
     super.dispose();
     pageController.dispose();
+  }
+
+  onTap(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
 
   void onItemTapped(int index) {
